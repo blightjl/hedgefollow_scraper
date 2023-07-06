@@ -1,6 +1,6 @@
-# smart_tweets
+<h1 align="center"> 🧠 Smart Tweets 🖥️ </h1>
 
-project goals:
+# 😤 project goals:
 
 -> modeling a bot that tweets important updates from sources
 
