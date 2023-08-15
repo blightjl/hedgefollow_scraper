@@ -1,10 +1,12 @@
 import requests, sys, bs4, os
 from selenium import webdriver
 
+# approach with requests
+
 target_url = 'https://hedgefollow.com/insider-trading-tracker'
 
 # retrieve the response object through GET
-# response = requests.get(target_url)
+response = requests.get(target_url)
 
 # exit if the webpage is not accessible
 # try:
@@ -15,26 +17,26 @@ target_url = 'https://hedgefollow.com/insider-trading-tracker'
 #    sys.exit(1)
 
 # save webpage locally
-# webpage = open('webpage.txt', 'wb')
-# for chunk in response.iter_content(100000):
-#    webpage.write(chunk)
+webpage = open('webpage.txt', 'wb')
+for chunk in response.iter_content(100000):
+   webpage.write(chunk)
 
 # webpage.close()
 
 # check for any changes in the table of stock exchange
-log_path = './dates.txt' 
+# log_path = './dates.txt' 
 
-print(log_path)
+# print(log_path)
 
 # retreive the current date the source is updated
-current_date = '99/99/9999'
+# current_date = '99/99/9999'
 
 # retreive the last date that was logged from the log file (dates.txt)
 
 with open('./webpage.txt', 'r') as file:
     soup = bs4.BeautifulSoup(file, 'html.parser')
 
-print(current_date)
+# print(current_date)
 try:
     all_trs = soup.find('table', class_='dataTable')
     print('PART 2')
